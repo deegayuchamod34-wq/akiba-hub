@@ -251,45 +251,63 @@ export function LandingPage() {
             </button>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredProducts.map((p) => (
-              <div key={p.id} className="group bg-[#040416] border border-white/10 rounded-xl overflow-hidden shadow-xl hover:shadow-[0_0_15px_rgba(0,240,255,0.15)] hover:border-neoncyan/50 duration-300 flex flex-col justify-between">
-                
-                <div className="relative aspect-4/3 overflow-hidden bg-[#03030c] border-b border-white/5">
-                  <img
-                    src={p.image}
-                    alt={p.name}
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover filter brightness-90 group-hover:scale-102 transition-transform duration-300"
-                  />
-                  <span className="absolute top-2 left-2 bg-[#05051c] border border-neoncyan/40 text-neoncyan font-mono text-[8px] font-bold px-2 py-0.5 rounded">
-                    {p.releaseYear} SYSTEM_EDITION
-                  </span>
-                </div>
-
-                <div className="p-4 flex-1 flex flex-col justify-between bg-[#040416]/95">
-                  <div className="space-y-1">
-                    <span className="text-[8px] font-bold text-neonpink font-mono block tracking-widest">
-                      // {p.category.replace('onepiece', 'One Piece').replace('pokemon', 'Pokémon').toUpperCase()}
-                    </span>
-                    <h3 className="text-xs font-bold text-white line-clamp-1 truncate block font-sans">{p.name}</h3>
-                  </div>
-
-                  <div className="pt-3 border-t border-white/5 mt-3 flex items-center justify-between font-mono">
-                    <span className="text-xs font-black text-neoncyan">${p.price.toFixed(2)}</span>
-                    <button
-                      id={`hero-item-add-${p.id}`}
-                      onClick={() => addToCart(p)}
-                      className="px-3.5 py-1.5 bg-transparent border border-neonpink text-neonpink hover:bg-neonpink hover:text-white rounded text-[10px] font-bold tracking-widest transition-all cursor-pointer shadow-[0_0_8px_rgba(255,0,127,0.1)] hover:shadow-[0_0_15px_rgba(255,0,127,0.4)]"
-                    >
-                      Instant Add
-                    </button>
-                  </div>
-                </div>
-
+          {featuredProducts.length === 0 ? (
+            <div className="py-12 px-6 text-center bg-[#04041c] border border-white/10 rounded-xl p-8 max-w-2xl mx-auto shadow-xl">
+              <span className="text-3xl animate-pulse block mb-4">🚚</span>
+              <h3 className="text-sm font-bold text-white font-mono uppercase tracking-wider mb-2">
+                Inventory Refueling In Progress
+              </h3>
+              <p className="text-xs text-gray-400 leading-normal max-w-md mx-auto">
+                Our latest batch of direct-import Japanese collectibles is currently unloading. The stock is currently being imported and checked for pristine quality and perfect factory-seals. Check back in a few moments!
+              </p>
+              <div className="mt-6 flex items-center justify-center gap-2 max-w-xs mx-auto">
+                <div className="w-2.5 h-2.5 bg-neonpink rounded-full animate-ping"></div>
+                <span className="text-[10px] font-mono font-bold text-neonpink tracking-wider">
+                  IMPORT STREAM BUFFERING
+                </span>
               </div>
-            ))}
-          </div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {featuredProducts.map((p) => (
+                <div key={p.id} className="group bg-[#040416] border border-white/10 rounded-xl overflow-hidden shadow-xl hover:shadow-[0_0_15px_rgba(0,240,255,0.15)] hover:border-neoncyan/50 duration-300 flex flex-col justify-between">
+                  
+                  <div className="relative aspect-4/3 overflow-hidden bg-[#03030c] border-b border-white/5">
+                    <img
+                      src={p.image}
+                      alt={p.name}
+                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-cover filter brightness-90 group-hover:scale-102 transition-transform duration-300"
+                    />
+                    <span className="absolute top-2 left-2 bg-[#05051c] border border-neoncyan/40 text-neoncyan font-mono text-[8px] font-bold px-2 py-0.5 rounded">
+                      {p.releaseYear} SYSTEM_EDITION
+                    </span>
+                  </div>
+
+                  <div className="p-4 flex-1 flex flex-col justify-between bg-[#040416]/95">
+                    <div className="space-y-1">
+                      <span className="text-[8px] font-bold text-neonpink font-mono block tracking-widest">
+                        // {p.category.replace('onepiece', 'One Piece').replace('pokemon', 'Pokémon').toUpperCase()}
+                      </span>
+                      <h3 className="text-xs font-bold text-white line-clamp-1 truncate block font-sans">{p.name}</h3>
+                    </div>
+
+                    <div className="pt-3 border-t border-white/5 mt-3 flex items-center justify-between font-mono">
+                      <span className="text-xs font-black text-neoncyan">${p.price.toFixed(2)}</span>
+                      <button
+                        id={`hero-item-add-${p.id}`}
+                        onClick={() => addToCart(p)}
+                        className="px-3.5 py-1.5 bg-transparent border border-neonpink text-neonpink hover:bg-neonpink hover:text-white rounded text-[10px] font-bold tracking-widest transition-all cursor-pointer shadow-[0_0_8px_rgba(255,0,127,0.15)] hover:shadow-[0_0_15px_rgba(255,0,127,0.45)]"
+                      >
+                        Instant Add
+                      </button>
+                    </div>
+                  </div>
+
+                </div>
+              ))}
+            </div>
+          )}
 
         </div>
       </section>

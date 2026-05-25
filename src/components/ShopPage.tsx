@@ -210,22 +210,39 @@ export function ShopPage() {
 
             {/* Catalog Grid list */}
             {sortedAndFilteredProducts.length === 0 ? (
-              <div className="py-20 text-center bg-[#04041c] border-2 border-dashed border-white/10 rounded-2xl p-6 shadow-xl">
-                <SlidersHorizontal className="w-12 h-12 text-gray-500 mx-auto opacity-70 mb-3" />
-                <h3 className="text-md font-bold text-white font-mono">No collectibles match search parameters</h3>
-                <p className="text-xs text-gray-400 max-w-sm mx-auto mt-1">
-                  Adjust filter metrics or search query to find registered collectibles in Tokyo HQ.
-                </p>
-                <button
-                  onClick={() => {
-                    setSearchQuery('');
-                    setCategoryAndGroup('all');
-                  }}
-                  className="mt-6 px-4 py-2 bg-neonpink text-white rounded font-mono text-xs font-bold tracking-widest shadow-[0_0_12px_rgba(255,0,127,0.35)] cursor-pointer hover:bg-neonpink/90 transition-all"
-                >
-                  Reset All Filters
-                </button>
-              </div>
+              PRODUCTS.length === 0 ? (
+                <div className="py-20 text-center bg-[#04041c] border border-white/10 rounded-2xl p-8 shadow-xl max-w-2xl mx-auto">
+                  <div className="inline-flex items-center justify-center p-3.5 bg-neonpink/10 border border-neonpink text-neonpink rounded-full shadow-[0_0_15px_rgba(255,0,127,0.2)] mb-5">
+                    <Sparkles className="w-8 h-8 animate-pulse text-neonpink" />
+                  </div>
+                  <h3 className="text-lg font-bold text-white font-mono tracking-wider uppercase mb-3">
+                    Stock Import in Progress
+                  </h3>
+                  <p className="text-xs text-gray-300 leading-relaxed max-w-md mx-auto">
+                    A pristine batch of factory-sealed trading card packs and detailed scale models is currently being imported directly from Akihabara, Tokyo. Our quality-control crew is active, currently unloading and registering each parcel to ensure immaculate condition.
+                  </p>
+                  <p className="text-[11px] text-neoncyan font-mono font-bold mt-4 animate-pulse">
+                    // Live inventory corridors will resume momentarily. Please stand by.
+                  </p>
+                </div>
+              ) : (
+                <div className="py-20 text-center bg-[#04041c] border-2 border-dashed border-white/10 rounded-2xl p-6 shadow-xl">
+                  <SlidersHorizontal className="w-12 h-12 text-gray-500 mx-auto opacity-70 mb-3" />
+                  <h3 className="text-md font-bold text-white font-mono">No collectibles match search parameters</h3>
+                  <p className="text-xs text-gray-400 max-w-sm mx-auto mt-1">
+                    Adjust filter metrics or search query to find registered collectibles in Tokyo HQ.
+                  </p>
+                  <button
+                    onClick={() => {
+                      setSearchQuery('');
+                      setCategoryAndGroup('all');
+                    }}
+                    className="mt-6 px-4 py-2 bg-neonpink text-white rounded font-mono text-xs font-bold tracking-widest shadow-[0_0_12px_rgba(255,0,127,0.35)] cursor-pointer hover:bg-neonpink/90 transition-all"
+                  >
+                    Reset All Filters
+                  </button>
+                </div>
+              )
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {sortedAndFilteredProducts.map((product) => {
