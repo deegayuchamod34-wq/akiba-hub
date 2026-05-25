@@ -38,7 +38,7 @@ export function CartDrawer() {
           <div className="p-6 border-b border-white/10 flex items-center justify-between bg-[#08082c]">
             <h2 className="text-sm font-mono font-black text-white uppercase tracking-widest flex items-center gap-2">
               <ShoppingBag className="w-4 h-4 text-neonpink filter drop-shadow-[0_0_3px_#ff007f]" />
-              SECURED_CART // DATA_STREAM
+              MY SHOPPING CART
             </h2>
             <button
               id="close-cart-btn"
@@ -60,9 +60,9 @@ export function CartDrawer() {
                     <div className="w-2 h-2 bg-white rounded-full"></div>
                   </div>
                 </div>
-                <h3 className="text-md font-bold font-mono text-white uppercase tracking-widest">Your deck is empty</h3>
+                <h3 className="text-md font-bold font-mono text-white uppercase tracking-widest">Your cart is empty</h3>
                 <p className="text-xs text-gray-400 max-w-xs mt-2 font-medium font-sans leading-relaxed">
-                  Ready to start compiling? Navigate our products catalog to extract exclusive sealed boxes and scale figure diorama items.
+                  Browse our products catalog to find and add premium collectibles to your shopping cart.
                 </p>
                 <button
                   id="checkout-back-to-shop"
@@ -72,7 +72,7 @@ export function CartDrawer() {
                   }}
                   className="mt-6 px-5 py-3 bg-neoncyan text-slate-950 font-black text-xs font-mono rounded tracking-widest shadow-[0_0_12px_rgba(0,240,255,0.4)] hover:bg-[#00d0e0] transition-colors cursor-pointer"
                 >
-                  INITIALIZE ACQUISITION
+                  CONTINUE SHOPPING
                 </button>
               </div>
             ) : (
@@ -162,17 +162,17 @@ export function CartDrawer() {
             <div className="p-6 bg-[#08082c] border-t border-white/10 space-y-4 font-mono">
               <div className="space-y-2 text-xs">
                 <div className="flex justify-between text-gray-400">
-                  <span>DEPLOYED_ITEMS</span>
-                  <span className="font-bold text-white">{cart.reduce((count, item) => count + item.quantity, 0)} UNITS</span>
+                  <span>TOTAL ITEMS</span>
+                  <span className="font-bold text-white">{cart.reduce((count, item) => count + item.quantity, 0)} ITEMS</span>
                 </div>
                 <div className="flex justify-between items-baseline">
-                  <span className="font-bold text-gray-400">ESTIMATED_VALUE</span>
+                  <span className="font-bold text-gray-400">ESTIMATED TOTAL</span>
                   <span className="text-xl font-bold text-neoncyan filter drop-shadow-[0_0_5px_rgba(0,240,255,0.4)] animate-pulse">
                     ${subtotal.toFixed(2)}
                   </span>
                 </div>
                 <p className="text-[9px] text-gray-500 font-semibold leading-normal font-sans">
-                  // Shipping, taxes, customs clearance, and secure transaction options are configured step-by-step during checkout processing. No credit cards saved in local segment.
+                  Shipping, taxes, and discounts are calculated at checkout. Safe and secure transaction processed through PayPal.
                 </p>
               </div>
 
@@ -182,7 +182,7 @@ export function CartDrawer() {
                   onClick={handleProceedToCheckout}
                   className="w-full py-3 bg-neonpink hover:bg-neonpink/90 text-white font-bold rounded tracking-widest shadow-[0_0_15px_rgba(255,0,127,0.35)] hover:shadow-[0_0_20px_rgba(255,0,127,0.55)] cursor-pointer transition-all flex items-center justify-center gap-1.5"
                 >
-                  SECURE CHECKOUT MATRIX
+                  PROCEED TO CHECKOUT
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
                 <button
@@ -190,7 +190,7 @@ export function CartDrawer() {
                   onClick={() => setCartOpen(false)}
                   className="w-full py-2.5 bg-transparent hover:bg-neoncyan/10 text-neoncyan font-bold border border-neoncyan/40 rounded tracking-widest cursor-pointer transition-all"
                 >
-                  RETURN TO SECTOR_GRID
+                  CONTINUE SHOPPING
                 </button>
               </div>
             </div>

@@ -12,7 +12,7 @@ function AppContent() {
   const { activeView } = useShop();
 
   return (
-    <div className="min-h-screen flex flex-col justify-between bg-[#03030c] text-gray-200 font-sans antialiased cyber-grid relative overflow-x-hidden">
+    <div className="min-h-screen flex flex-col justify-between bg-[#070707] text-gray-200 font-sans antialiased cyber-grid relative overflow-x-hidden">
       <div className="relative z-10">
         {/* Navigation Headings bar */}
         <Header />

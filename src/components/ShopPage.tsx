@@ -65,41 +65,41 @@ export function ShopPage() {
   // Helper labels for category text values
   const categoryHeaderTitle = useMemo(() => {
     switch (selectedCategory) {
-      case 'pokemon-english': return 'Pokémon Packs // English TCG';
-      case 'pokemon-japanese': return 'Pokémon Packs // Japanese TCG';
-      case 'onepiece-english': return 'One Piece // English TCG';
-      case 'onepiece-japanese': return 'One Piece // Japanese TCG';
-      case 'action-fig': return `REALM DIORAMAS // ${selectedAnime}`;
-      default: return 'Central Inventory Net';
+      case 'pokemon-english': return 'Pokémon Packs (English TCG)';
+      case 'pokemon-japanese': return 'Pokémon Packs (Japanese TCG)';
+      case 'onepiece-english': return 'One Piece (English TCG)';
+      case 'onepiece-japanese': return 'One Piece (Japanese TCG)';
+      case 'action-fig': return `${selectedAnime} Figures`;
+      default: return 'All Collectibles';
     }
   }, [selectedCategory, selectedAnime]);
 
   return (
-    <div className="pt-28 pb-20 min-h-screen bg-[#020208]">
+    <div className="pt-28 pb-20 min-h-screen bg-[#070707]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Holographic Banner Section */}
-        <div className="relative mb-10 p-8 rounded-xl bg-[#060620]/80 border border-neoncyan/40 shadow-[0_0_20px_rgba(0,240,255,0.15)] overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6 backdrop-blur-md">
-          <div className="absolute top-0 right-0 -translate-y-12 translate-x-12 w-64 h-64 bg-neoncyan/5 rounded-full filter blur-2xl pointer-events-none"></div>
-          <div className="absolute bottom-0 left-0 translate-y-12 -translate-x-12 w-64 h-64 bg-neonpink/5 rounded-full filter blur-2xl pointer-events-none"></div>
+        <div className="relative mb-10 p-8 rounded-xl bg-[#121215]/95 border border-[#e60012]/30 shadow-[0_4px_30px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6 backdrop-blur-md">
+          <div className="absolute top-0 right-0 -translate-y-12 translate-x-12 w-64 h-64 bg-[#e60012]/5 rounded-full filter blur-2xl pointer-events-none"></div>
+          <div className="absolute bottom-0 left-0 translate-y-12 -translate-x-12 w-64 h-64 bg-white/5 rounded-full filter blur-2xl pointer-events-none"></div>
           
           <div className="space-y-2 relative z-10 text-center md:text-left">
-            <div className="inline-flex items-center gap-1.5 bg-neonpink/10 border border-neonpink text-neonpink px-3 py-1 rounded text-[10px] font-mono font-bold uppercase tracking-wider shadow-[0_0_8px_rgba(255,0,127,0.15)]">
-              <Sparkles className="w-3.5 h-3.5" /> TOKYO DIRECT VAULT SEGMENT
+            <div className="inline-flex items-center gap-1.5 bg-[#e60012]/15 border border-[#e60012] text-white px-3 py-1 rounded text-[10px] font-mono font-bold uppercase tracking-wider shadow-[0_0_8px_rgba(230,0,18,0.15)]">
+              <Sparkles className="w-3.5 h-3.5" /> TOKYO DIRECT IMPORT
             </div>
-            <h1 className="text-2xl md:text-3xl font-display font-black text-white tracking-widest uppercase">
+            <h1 className="text-2xl md:text-3xl font-display font-medium text-white tracking-widest uppercase">
               {categoryHeaderTitle}
             </h1>
             <p className="text-xs text-gray-300 max-w-xl font-medium">
-              Browse and extract authentic sealed trading card packs and detailed scale PVC models. Every single package is certified weighted, tamper-proof, and secured under active video proof.
+              Browse our hand-picked selection of authentic sealed trading card packs and detailed scale PVC figures. Every item is guaranteed untampered and sourced direct from trusted publishers.
             </p>
           </div>
 
-          <div className="flex items-center justify-center relative bg-[#0c0c2d] border border-neoncyan/40 p-5 rounded-lg flex-shrink-0 shadow-[0_0_12px_rgba(0,240,255,0.1)]">
+          <div className="flex items-center justify-center relative bg-[#18181c] border border-white/10 p-5 rounded-lg flex-shrink-0">
             <div className="text-center font-mono">
-              <div className="text-[10px] text-[#00f0ff] uppercase tracking-widest font-bold">ACTIVE_ITEMS</div>
-              <div className="text-4xl font-extrabold text-white mt-1 filter drop-shadow-[0_0_4px_#ffffff]">{sortedAndFilteredProducts.length}</div>
-              <div className="text-[9px] text-neongreen font-bold mt-1.5">// SECURED AIR COURIER SHIPPED</div>
+              <div className="text-[10px] text-[#e60012] uppercase tracking-widest font-bold">AVAILABLE ITEMS</div>
+              <div className="text-4xl font-extrabold text-white mt-1">{sortedAndFilteredProducts.length}</div>
+              <div className="text-[9px] text-[#e60012] font-bold mt-1.5">EXPRESS AIR SHIPPED GLOBAL</div>
             </div>
           </div>
         </div>
@@ -108,10 +108,10 @@ export function ShopPage() {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           
           {/* Sidebar category filters (Desktop) */}
-          <div className="p-6 bg-[#04041c] border border-white/10 rounded-xl h-fit space-y-6 shadow-xl">
+          <div className="p-6 bg-[#121215] border border-white/10 rounded-xl h-fit space-y-6 shadow-xl">
             <div>
-              <h3 className="text-xs font-mono font-bold uppercase tracking-widest text-[#00f0ff] mb-4 flex items-center gap-1.5 border-b border-white/5 pb-2">
-                <Filter className="w-4 h-4 text-neoncyan" /> DATA FILES
+              <h3 className="text-xs font-mono font-bold uppercase tracking-widest text-[#e60012] mb-4 flex items-center gap-1.5 border-b border-white/5 pb-2">
+                <Filter className="w-4 h-4 text-[#e60012]" /> CATEGORIES
               </h3>
               <div className="flex flex-col gap-2">
                 {[
@@ -120,19 +120,19 @@ export function ShopPage() {
                   { id: 'pokemon-japanese', name: 'Pokémon Japanese packs' },
                   { id: 'onepiece-english', name: 'One Piece English TCG' },
                   { id: 'onepiece-japanese', name: 'One Piece Japanese TCG' },
-                  { id: 'action-fig', name: 'Realm Diorama figures' }
+                  { id: 'action-fig', name: 'Anime figures' }
                 ].map((cat) => (
                   <button
                     key={cat.id}
                     onClick={() => setCategoryAndGroup(cat.id, 'All Anime')}
                     className={`w-full text-left px-4 py-2.5 rounded text-xs font-mono font-bold flex items-center justify-between transition-all cursor-pointer border ${
                       selectedCategory === cat.id
-                        ? 'bg-neonpink/10 border-neonpink text-white shadow-[0_0_10px_rgba(255,0,127,0.35)] font-black'
-                        : 'bg-[#080828] border-white/5 text-gray-400 hover:text-white hover:bg-neonpink/5'
+                        ? 'bg-[#e60012] border-[#e60012] text-white shadow-[0_0_10px_rgba(230,0,18,0.35)] font-black'
+                        : 'bg-[#18181c] border-white/5 text-gray-400 hover:text-white hover:bg-[#e60012]/10'
                     }`}
                   >
-                    <span>&gt;_ {cat.name}</span>
-                    {selectedCategory === cat.id && <Check className="w-3.5 h-3.5 text-neoncyan" />}
+                    <span>{cat.name}</span>
+                    {selectedCategory === cat.id && <Check className="w-3.5 h-3.5 text-white" />}
                   </button>
                 ))}
               </div>
@@ -141,8 +141,8 @@ export function ShopPage() {
             {/* Sub-categorization for anime figures only */}
             {selectedCategory === 'action-fig' && (
               <div className="border-t border-white/5 pt-5">
-                <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-neoncyan mb-3">
-                  // ANIME FILE CODES
+                <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-[#e60012] mb-3">
+                  FILTER BY ANIME
                 </h4>
                 <div className="flex flex-col gap-1.5">
                   {ANIME_CATEGORIES.map((animeName) => (
@@ -151,13 +151,13 @@ export function ShopPage() {
                       onClick={() => setCategoryAndGroup('action-fig', animeName)}
                       className={`w-full text-left px-3.5 py-2 text-xs rounded transition-all cursor-pointer font-mono font-bold flex items-center justify-between ${
                         selectedAnime === animeName
-                          ? 'bg-neoncyan/10 text-neoncyan border border-neoncyan/30'
+                          ? 'bg-white/10 text-white border border-white/20'
                           : 'text-gray-400 hover:text-white hover:bg-white/5'
                       }`}
                     >
                       <span>- {animeName}</span>
                       {selectedAnime === animeName && (
-                        <span className="w-1.5 h-1.5 rounded-full bg-neoncyan shadow-[0_0_5px_#00f0ff]"></span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#e60012] shadow-[0_0_5px_#e60012]"></span>
                       )}
                     </button>
                   ))}
@@ -165,10 +165,10 @@ export function ShopPage() {
               </div>
             )}
 
-            <div className="border-t border-white/5 pt-5 text-center bg-[#070725] p-3.5 rounded border border-white/5">
+            <div className="border-t border-white/5 pt-5 text-center bg-[#18181c] p-3.5 rounded border border-white/5">
               <span className="text-xl">📦</span>
               <p className="text-[10px] text-gray-400 leading-normal mt-1.5 font-sans font-semibold">
-                Require full booster boxes or factory-sealed case shipments? Ping us under information support channels for wholesale rates.
+                Interested in full booster boxes or factory-sealed cases? Contact our customer support team for wholesale rates and custom requests.
               </p>
             </div>
           </div>
@@ -177,33 +177,33 @@ export function ShopPage() {
           <div className="lg:col-span-3 space-y-6">
             
             {/* Search and Sort panel */}
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 bg-[#04041c] border border-white/10 rounded-xl shadow-xl">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 bg-[#121215] border border-white/10 rounded-xl shadow-xl">
               {/* Search bar inputs */}
               <div className="relative w-full sm:max-w-xs">
                 <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
                 <input
                   type="text"
-                  placeholder="Search database terminal..."
+                  placeholder="Search catalog..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full bg-[#080828] border border-white/10 focus:border-neoncyan rounded px-4 py-2 pl-10 text-xs font-semibold text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-neoncyan font-mono transition-all"
+                  className="w-full bg-[#18181c] border border-white/10 focus:border-[#e60012] rounded px-4 py-2 pl-10 text-xs font-semibold text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-[#e60012] font-mono transition-all"
                 />
               </div>
 
               {/* Sorting options */}
               <div className="flex items-center gap-3 w-full sm:w-auto justify-end text-right font-mono text-xs">
                 <span className="text-gray-400 font-bold flex items-center gap-1.5">
-                  <SlidersHorizontal className="w-3.5 h-3.5 text-neonpink" /> SORT_SEQ:
+                  <SlidersHorizontal className="w-3.5 h-3.5 text-[#e60012]" /> SORT BY:
                 </span>
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value as any)}
-                  className="bg-[#080828] border border-white/10 text-xs font-bold rounded px-3 py-2 text-white focus:outline-none focus:border-neoncyan cursor-pointer transition-all"
+                  className="bg-[#18181c] border border-white/10 text-xs font-bold rounded px-3 py-2 text-white focus:outline-none focus:border-[#e60012] cursor-pointer transition-all"
                 >
-                  <option value="default">Relevance Date</option>
-                  <option value="price-asc">Price Index: Low-&gt;High</option>
-                  <option value="price-desc">Price Index: High-&gt;Low</option>
-                  <option value="rating-desc">Highly Weighted Pulls</option>
+                  <option value="default">Newest Releases</option>
+                  <option value="price-asc">Price: Low to High</option>
+                  <option value="price-desc">Price: High to Low</option>
+                  <option value="rating-desc">Top Rated</option>
                 </select>
               </div>
             </div>
@@ -211,22 +211,28 @@ export function ShopPage() {
             {/* Catalog Grid list */}
             {sortedAndFilteredProducts.length === 0 ? (
               PRODUCTS.length === 0 ? (
-                <div className="py-20 text-center bg-[#04041c] border border-white/10 rounded-2xl p-8 shadow-xl max-w-2xl mx-auto">
-                  <div className="inline-flex items-center justify-center p-3.5 bg-neonpink/10 border border-neonpink text-neonpink rounded-full shadow-[0_0_15px_rgba(255,0,127,0.2)] mb-5">
-                    <Sparkles className="w-8 h-8 animate-pulse text-neonpink" />
+                <div className="py-20 text-center bg-[#121215] border border-[#e60012]/30 rounded-2xl p-8 shadow-xl max-w-2xl mx-auto">
+                  <div className="inline-flex items-center justify-center p-3.5 bg-[#e60012]/15 border border-[#e60012] text-white rounded-full mb-5 animate-pulse">
+                    <Sparkles className="w-8 h-8 text-[#e60012]" />
                   </div>
-                  <h3 className="text-lg font-bold text-white font-mono tracking-wider uppercase mb-3">
-                    Stock Import in Progress
+                  <h3 className="text-lg font-bold text-white font-mono tracking-wider uppercase mb-3 text-transparent bg-clip-text bg-gradient-to-r from-white via-red-500 to-white">
+                    STOCK CURRENTLY BEING IMPORTED
                   </h3>
-                  <p className="text-xs text-gray-300 leading-relaxed max-w-md mx-auto">
-                    A pristine batch of factory-sealed trading card packs and detailed scale models is currently being imported directly from Akihabara, Tokyo. Our quality-control crew is active, currently unloading and registering each parcel to ensure immaculate condition.
+                  <p className="text-xs text-gray-300 leading-relaxed max-w-md mx-auto font-sans font-medium">
+                    Our direct pipeline from Akihabara and Tokyo logistics hubs is currently active! We are importing brand new batches of factory-sealed Pokémon and One Piece booster packs, along with premium scale PVC figures.
                   </p>
-                  <p className="text-[11px] text-neoncyan font-mono font-bold mt-4 animate-pulse">
-                    // Live inventory corridors will resume momentarily. Please stand by.
-                  </p>
+                  <div className="mt-6 flex flex-col items-center justify-center gap-2">
+                    <div className="inline-flex items-center gap-2 py-1 px-3 bg-[#e60012]/10 border border-[#e60012]/30 rounded text-[10px] font-mono font-bold text-[#e60012]">
+                      <span className="w-2 h-2 rounded-full bg-[#e60012] animate-ping"></span>
+                      IMPORT IN PROGRESS // CUSTOMS VERIFICATION
+                    </div>
+                    <span className="text-[9px] text-gray-500 font-mono font-bold mt-1">
+                      Check back shortly for premium, unweighed mint stock uploads.
+                    </span>
+                  </div>
                 </div>
               ) : (
-                <div className="py-20 text-center bg-[#04041c] border-2 border-dashed border-white/10 rounded-2xl p-6 shadow-xl">
+                <div className="py-20 text-center bg-[#121215] border-2 border-dashed border-white/10 rounded-2xl p-6 shadow-xl">
                   <SlidersHorizontal className="w-12 h-12 text-gray-500 mx-auto opacity-70 mb-3" />
                   <h3 className="text-md font-bold text-white font-mono">No collectibles match search parameters</h3>
                   <p className="text-xs text-gray-400 max-w-sm mx-auto mt-1">
@@ -237,7 +243,7 @@ export function ShopPage() {
                       setSearchQuery('');
                       setCategoryAndGroup('all');
                     }}
-                    className="mt-6 px-4 py-2 bg-neonpink text-white rounded font-mono text-xs font-bold tracking-widest shadow-[0_0_12px_rgba(255,0,127,0.35)] cursor-pointer hover:bg-neonpink/90 transition-all"
+                    className="mt-6 px-4 py-2 bg-[#e60012] text-white rounded font-mono text-xs font-bold tracking-widest shadow-[0_0_12px_rgba(230,0,18,0.35)] cursor-pointer hover:bg-[#ff1e27] transition-all"
                   >
                     Reset All Filters
                   </button>
@@ -246,12 +252,10 @@ export function ShopPage() {
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {sortedAndFilteredProducts.map((product) => {
-                  const isInCart = cart.some((item) => item.product.id === product.id);
-
                   return (
                     <div
                       key={product.id}
-                      className="group relative bg-[#040416] border border-white/10 hover:border-neoncyan/55 rounded-xl overflow-hidden transition-all duration-300 flex flex-col justify-between shadow-lg hover:shadow-[0_0_15px_rgba(0,240,255,0.15)]"
+                      className="group relative bg-[#121215] border border-white/10 hover:border-[#e60012]/60 rounded-xl overflow-hidden transition-all duration-300 flex flex-col justify-between shadow-lg hover:shadow-[0_0_15px_rgba(230,0,18,0.15)]"
                     >
                       
                       {/* Product display thumbnail image */}
@@ -266,35 +270,35 @@ export function ShopPage() {
                         {/* Badging overlay */}
                         <div className="absolute top-3 left-3 z-10 flex flex-col gap-1.5 font-mono">
                           {product.category === 'pokemon-english' && (
-                            <span className="bg-slate-950 border border-neonpink/50 text-neonpink font-black text-[8px] px-2 py-0.5 rounded shadow">
+                            <span className="bg-slate-950 border border-white/20 text-white font-bold text-[8px] px-2 py-0.5 rounded shadow">
                               POKÉMON EN
                             </span>
                           )}
                           {product.category === 'pokemon-japanese' && (
-                            <span className="bg-slate-950 border border-neoncyan/55 text-neoncyan font-black text-[8px] px-2 py-0.5 rounded shadow">
+                            <span className="bg-slate-950 border border-[#e60012]/40 text-[#e60012] font-bold text-[8px] px-2 py-0.5 rounded shadow">
                               POKÉMON JPN
                             </span>
                           )}
                           {product.category === 'onepiece-english' && (
-                            <span className="bg-slate-950 border border-neonpink/50 text-neonpink font-black text-[8px] px-2 py-0.5 rounded shadow">
+                            <span className="bg-slate-950 border border-white/20 text-white font-bold text-[8px] px-2 py-0.5 rounded shadow">
                               ONE PIECE EN
                             </span>
                           )}
                           {product.category === 'onepiece-japanese' && (
-                            <span className="bg-slate-950 border border-neoncyan/55 text-neoncyan font-black text-[8px] px-2 py-0.5 rounded shadow">
+                            <span className="bg-slate-950 border border-[#e60012]/40 text-[#e60012] font-bold text-[8px] px-2 py-0.5 rounded shadow">
                               ONE PIECE JPN
                             </span>
                           )}
                           {product.category === 'action-fig' && (
-                            <span className="bg-slate-950 border border-neonyellow/50 text-neonyellow font-black text-[8px] px-2 py-0.5 rounded shadow">
+                            <span className="bg-slate-950 border border-white/30 text-white font-bold text-[8px] px-2 py-0.5 rounded shadow">
                               SCALE PVC
                             </span>
                           )}
                         </div>
 
                         {/* Rating overlay badge */}
-                        <div className="absolute top-3 right-3 z-10 bg-[#050518]/90 backdrop-blur-sm text-neonpink px-2 py-0.5 rounded-md text-[8px] font-mono font-bold flex items-center gap-1 border border-white/5 shadow-sm">
-                          <Star className="w-2.5 h-2.5 fill-neonyellow stroke-neonyellow" />
+                        <div className="absolute top-3 right-3 z-10 bg-[#121215]/95 backdrop-blur-sm text-white px-2 py-0.5 rounded-md text-[8px] font-mono font-bold flex items-center gap-1 border border-white/10 shadow-sm">
+                          <Star className="w-2.5 h-2.5 fill-[#e60012] stroke-[#e60012]" />
                           {product.rating.toFixed(1)}
                         </div>
 
@@ -303,26 +307,26 @@ export function ShopPage() {
                           <button
                             id={`quick-view-${product.id}`}
                             onClick={() => setSetSelectedQuickView(product)}
-                            className="bg-transparent text-neoncyan border border-neoncyan hover:bg-neoncyan hover:text-slate-950 px-4 py-2 rounded-md shadow-[0_0_15px_rgba(0,240,255,0.45)] transition-all cursor-pointer pointer-events-auto flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase tracking-widest"
+                            className="bg-transparent text-white border border-white hover:bg-white hover:text-slate-950 px-4 py-2 rounded-md shadow-[0_0_15px_rgba(255,255,255,0.25)] transition-all cursor-pointer pointer-events-auto flex items-center gap-1.5 text-[10px] font-mono font-bold uppercase tracking-widest"
                           >
                             <Eye className="w-3.5 h-3.5" />
-                            SYS_VIEW
+                            QUICK VIEW
                           </button>
                         </div>
                       </div>
 
                       {/* Content details and buy control button */}
-                      <div className="p-4 flex-1 flex flex-col justify-between bg-[#040416]">
+                      <div className="p-4 flex-1 flex flex-col justify-between bg-[#121215]">
                         <div className="space-y-1.5">
                           <div className="flex items-center gap-2">
                             {product.anime && (
-                              <span className="text-[10px] font-bold text-neonpink font-mono">
+                              <span className="text-[10px] font-bold text-[#e60012] font-mono">
                                 // {product.anime.toUpperCase()}
                               </span>
                             )}
                             {product.cardsPerPack && (
-                              <span className="text-[9px] font-bold text-neoncyan font-mono border border-neoncyan/10 px-1 py-0.25 rounded">
-                                {product.cardsPerPack} MODULES
+                              <span className="text-[9px] font-bold text-white font-mono border border-white/25 px-1 py-0.25 rounded">
+                                {product.cardsPerPack} CARDS
                               </span>
                             )}
                             <span className="text-[9px] text-gray-500 font-mono font-bold ml-auto">
@@ -330,15 +334,15 @@ export function ShopPage() {
                             </span>
                           </div>
                           
-                          <h3 className="text-xs font-bold text-white font-sans tracking-tight line-clamp-2 min-h-[32px] group-hover:text-neoncyan transition-colors leading-relaxed">
+                          <h3 className="text-xs font-bold text-white font-sans tracking-tight line-clamp-2 min-h-[32px] group-hover:text-[#e60012] transition-colors leading-relaxed">
                             {product.name}
                           </h3>
                         </div>
 
                         <div className="pt-4 mt-3 border-t border-white/5 flex items-center justify-between font-mono">
                           <div className="flex flex-col">
-                            <span className="text-[8px] text-gray-500 font-bold leading-none uppercase">SEALED ITEM</span>
-                            <span className="text-sm font-extrabold text-neoncyan leading-none mt-1">
+                            <span className="text-[8px] text-gray-500 font-bold leading-none uppercase font-mono">AUTHENTIC</span>
+                            <span className="text-sm font-bold text-white leading-none mt-1">
                               ${product.price.toFixed(2)}
                             </span>
                           </div>
@@ -348,8 +352,8 @@ export function ShopPage() {
                             onClick={() => handleAddToCart(product)}
                             className={`px-4 py-2 rounded font-mono font-bold text-[10px] tracking-wider flex items-center gap-1.5 transition-all cursor-pointer border ${
                               justAddedId === product.id
-                                ? 'bg-neongreen/10 border-neongreen text-neongreen shadow-[0_0_12px_rgba(57,255,20,0.2)] animate-pulse'
-                                : 'bg-transparent border-neonpink text-neonpink hover:bg-neonpink hover:text-white shadow-[0_0_8px_rgba(255,0,127,0.1)] hover:shadow-[0_0_15px_rgba(255,0,127,0.45)]'
+                                ? 'bg-emerald-500/10 border-emerald-500 text-emerald-400 font-bold animate-pulse'
+                                : 'bg-transparent border-[#e60012] text-[#e60012] hover:bg-[#e60012] hover:text-white shadow-[0_0_8px_rgba(230,0,18,0.1)] hover:shadow-[0_0_15px_rgba(230,0,18,0.45)]'
                             }`}
                           >
                             {justAddedId === product.id ? (
@@ -380,15 +384,15 @@ export function ShopPage() {
       {/* Quick view modal */}
       {setSelectedQuickView && (
         <div className="fixed inset-0 z-55 flex items-center justify-center p-4">
-          <div className="absolute inset-0 bg-[#02020a]/85 backdrop-blur-md" onClick={() => setSetSelectedQuickView(null)} />
+          <div className="absolute inset-0 bg-[#000]/90 backdrop-blur-md" onClick={() => setSetSelectedQuickView(null)} />
           
-          <div className="relative w-full max-w-2xl bg-[#060620] border-2 border-neoncyan rounded-xl overflow-hidden p-6 shadow-[0_0_35px_rgba(0,240,255,0.35)] z-10 flex flex-col md:flex-row gap-6 text-white text-left">
+          <div className="relative w-full max-w-2xl bg-[#121215] border border-white/10 rounded-xl overflow-hidden p-6 shadow-[0_0_35px_rgba(0,0,0,0.8)] z-10 flex flex-col md:flex-row gap-6 text-white text-left">
             
             {/* Close button */}
             <button
               id="close-quickview"
               onClick={() => setSetSelectedQuickView(null)}
-              className="absolute top-4 right-4 p-1 rounded bg-[#09092c] hover:bg-neonpink hover:text-white text-neonpink border border-neonpink/50 transition-all cursor-pointer"
+              className="absolute top-4 right-4 p-1 rounded bg-[#18181c] hover:bg-[#e60012] hover:text-white text-white border border-white/10 transition-all cursor-pointer"
             >
               <X className="w-4 h-4" />
             </button>
@@ -401,8 +405,8 @@ export function ShopPage() {
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover filter brightness-95"
               />
-              <span className="absolute bottom-3 left-3 bg-[#02020d] border border-neoncyan/50 px-2 py-0.5 rounded text-[9px] font-mono text-neoncyan font-bold">
-                In Stock Terminal: {setSelectedQuickView.stock}
+              <span className="absolute bottom-3 left-3 bg-[#121215] border border-white/10 px-2 py-0.5 rounded text-[9px] font-mono text-white font-bold">
+                In Stock: {setSelectedQuickView.stock}
               </span>
             </div>
 
@@ -410,22 +414,22 @@ export function ShopPage() {
             <div className="flex-1 flex flex-col justify-between">
               <div className="space-y-4">
                 <div className="flex items-center gap-2 font-mono">
-                  <span className="text-[9px] bg-[#05051e] border border-neonpink/50 text-neonpink px-2.5 py-0.5 rounded uppercase font-bold">
+                  <span className="text-[9px] bg-[#18181c] border border-[#e60012]/40 text-[#e60012] px-2.5 py-0.5 rounded uppercase font-bold">
                     {setSelectedQuickView.category.replace('onepiece', 'One Piece').replace('pokemon', 'Pokémon').toUpperCase()}
                   </span>
                   {setSelectedQuickView.anime && (
-                    <span className="text-[9px] bg-[#05051e] border border-neoncyan/55 text-neoncyan px-2.5 py-0.5 rounded font-bold">
+                    <span className="text-[9px] bg-[#18181c] border border-white/20 text-white px-2.5 py-0.5 rounded font-bold">
                       {setSelectedQuickView.anime.toUpperCase()}
                     </span>
                   )}
                 </div>
 
-                <h2 className="text-md md:text-lg font-display font-bold text-white tracking-widest uppercase leading-snug">
+                <h2 className="text-md md:text-lg font-display font-medium text-white tracking-widest uppercase leading-snug">
                   {setSelectedQuickView.name}
                 </h2>
 
                 <div className="flex items-center gap-4 text-xs font-bold font-mono">
-                  <span className="text-neoncyan font-bold text-xl">${setSelectedQuickView.price.toFixed(2)}</span>
+                  <span className="text-[#e60012] font-black text-xl">${setSelectedQuickView.price.toFixed(2)}</span>
                   <span className="text-[10px] text-gray-400 font-medium">Est Release: {setSelectedQuickView.releaseYear}</span>
                 </div>
 
@@ -434,14 +438,14 @@ export function ShopPage() {
                 </p>
 
                 <div className="pt-2">
-                  <h4 className="text-[10px] font-mono text-neoncyan font-bold uppercase tracking-wider mb-2">// EXTRACT_PROBABILITIES</h4>
+                  <h4 className="text-[10px] font-mono text-white font-bold uppercase tracking-wider mb-2">PRODUCT HIGHLIGHTS</h4>
                   <ul className="grid grid-cols-2 gap-2 text-[10px] font-mono text-gray-300">
-                    <li className="bg-[#0b0b30] p-1.5 rounded border border-white/5">🌟 Holofoil Probability: ~33%</li>
-                    <li className="bg-[#0b0b30] p-1.5 rounded border border-white/5">📦 Factory Sealed Vaulted</li>
+                    <li className="bg-[#18181c] p-1.5 rounded border border-white/5">🌟 Holofoil Probability: ~33%</li>
+                    <li className="bg-[#18181c] p-1.5 rounded border border-white/5">📦 Factory Sealed & Untampered</li>
                     {setSelectedQuickView.cardsPerPack && (
-                      <li className="bg-[#0b0b30] p-1.5 rounded border border-white/5">🃏 Total Cards: {setSelectedQuickView.cardsPerPack}</li>
+                      <li className="bg-[#18181c] p-1.5 rounded border border-white/5">🃏 Total Cards: {setSelectedQuickView.cardsPerPack}</li>
                     )}
-                    <li className="bg-[#0b0b30] p-1.5 rounded border border-white/5">🛡️ Tamper-Proof Clean cases</li>
+                    <li className="bg-[#18181c] p-1.5 rounded border border-white/5">🛡️ Ultimate Collector Packaging</li>
                   </ul>
                 </div>
               </div>
@@ -453,9 +457,9 @@ export function ShopPage() {
                     handleAddToCart(setSelectedQuickView);
                     setSetSelectedQuickView(null);
                   }}
-                  className="flex-1 py-3 bg-neonpink hover:bg-neonpink/90 text-white text-xs font-bold rounded border border-neonpink tracking-widest flex items-center justify-center gap-2 transition-all cursor-pointer shadow-[0_0_15px_rgba(255,0,127,0.35)]"
+                  className="flex-1 py-3 bg-[#e60012] hover:bg-[#ff1e27] text-white text-xs font-bold rounded border border-[#e60012] tracking-widest flex items-center justify-center gap-2 transition-all cursor-pointer shadow-[0_0_15px_rgba(230,0,18,0.35)]"
                 >
-                  <ShoppingCart className="w-4 h-4" /> SECURE EXTRACT TO BAG
+                  <ShoppingCart className="w-4 h-4" /> ADD TO SHOPPING CART
                 </button>
               </div>
             </div>
